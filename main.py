@@ -18,9 +18,6 @@ def main():
     cont = cv2.findContours(tr.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     cont = cont[0] if len(cont) == 2 else cont[1]
 
-    mk = np.zeros(x_img.shape, dtype='uint8')
-    y_filled = y_img.copy()
-
     for c in cont:
         area = cv2.contourArea(c)
         if area >= 15:
