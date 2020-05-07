@@ -1,12 +1,11 @@
 import cv2
 import numpy as np
 from skimage.metrics import structural_similarity
-import click
 
 
 def main():
-    x_img = cv2.imread('img1.jpg')
-    y_img = cv2.imread('img2.jpg')
+    x_img = cv2.imread('images/img1.jpg')
+    y_img = cv2.imread('images/img2.jpg')
 
     x_tmp = cv2.cvtColor(x_img, cv2.COLOR_BGR2GRAY)
     y_tmp = cv2.cvtColor(y_img, cv2.COLOR_BGR2GRAY)
@@ -28,7 +27,7 @@ def main():
     cv2.imshow("RESULT", final)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    cv2.imwrite('finalImg.jpg', final)
+    cv2.imwrite('images/finalImg.jpg', final)
 
 
 if __name__ == '__main__':
